@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image and Data Upload to Firebase</title>
+    <!-- Include Firebase SDK and initialize -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/firebase/7.14.1-0/firebase.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.14.1-0/firebase-database.js"></script>
+    <script>
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        const firebaseConfig = {
+            apiKey: "AIzaSyAMu8wTgJPh6o_Q1Z3k5TUVh-VnVi1ghsM",
+            authDomain: "organicstor-5b6c2.firebaseapp.com",
+            databaseURL: "https://organicstor-5b6c2-default-rtdb.firebaseio.com",
+            projectId: "organicstor-5b6c2",
+            storageBucket: "organicstor-5b6c2.appspot.com",
+            messagingSenderId: "799023522468",
+            appId: "1:799023522468:web:9d07b6dad30d8c9947bc31",
+            measurementId: "G-CLBCL7NRG6"
+        };
+
+        firebase.initializeApp(firebaseConfig);
+    </script>
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar navbar-expand-md navbar-dark  bg-primary text-white">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#">Store</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="./index.html">Orders</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="addItem.html">add item</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../index.html">website</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="../cart.html">website</a>
+                        </li>
+                    </ul>
+                    <form class="form-inline mt-2 mt-md-0">
+                        <a href="../index.html" class="text-white nav-link">
+                            EXIT
+                        </a>
+                    </form>
+                </div>
+            </div>
+        </nav>
+    </header>
+    <div class="container mt-5">
+        <form>
+            <div class="mb-3">
+                <h1>Add Items</h1>
+                <label for="exampleInputEmail1" class="form-label">Upload the file</label>
+                <input type="file" id="fileInput" class="form-control">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Enter Image name</label>
+              <input type="text" class="form-control" id="nameInput" placeholder="Enter image name">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter Description</label>
+                <input type="text" class="form-control" iid="descriptionInput" placeholder="Enter description">
+            </div>
+            <div class="mb-3">
+                <label for="exampleInputPassword1" class="form-label">Enter Price</label>
+                <input type="number" id="priceInput" placeholder="Enter price" class="form-control" >
+            </div>
+
+            <button id="uploadButton" class="btn btn-primary">Uplodad</button>
+        </form>
+    </div>
+    <script>
+        const storage = firebase.storage();
+        const storageRef = storage.ref();
+        const database = firebase.database();
+        const imagesRef = database.ref("images");
+
+        const fileInput = document.getElementById("fileInput");
+        const nameInput = document.getElementById("nameInput");
+        const descriptionInput = document.getElementById("descriptionInput");
+        const priceInput = document.getElementById("priceInput");
+        const uploadButton = document.getElementById("uploadButton");
+
+        uploadButton.addEventListener("click", function () {
+            const file = fileInput.files[0];
+            if (!file) {
+                alert("Please select a file.");
+                return;
+            }
+
+            const name = nameInput.value;
+            const description = descriptionInput.value;
+            const price = priceInput.value;
+
+            const imageRef = storageRef.child("images/" + file.name);
+
+            imageRef.put(file).then(snapshot => {
+                snapshot.ref.getDownloadURL().then(url => {
+                    imagesRef.push({
+                        imageUrl: url,
+                        name: name,
+                        description: description,
+                        price: price
+                    });
+                    alert("Image and data uploaded!");
+                    // Clear the inputs
+                    fileInput.value = "";
+                    nameInput.value = "";
+                    descriptionInput.value = "";
+                    priceInput.value = "";
+                });
+            }).catch(error => {
+                console.error("Error uploading image:", error);
+            });
+        });
+    </script>
+</body>
+
+</html>

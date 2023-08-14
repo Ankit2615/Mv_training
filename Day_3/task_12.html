@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td><Label>Enter a number</Label></td>
+                <td><input type="text" name="val_1" id="val_1"></td>
+                <td><button type="button" value="Submit" onclick="factor()">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function factor(){
+            var num = document.getElementById('val_1').value; 
+            var fact = [];
+            for(var i = 0; i <= num; i++){
+                if(num % i == 0){
+                    fact.push(i); 
+                }
+            }
+            console.log(fact);
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function getTimeRemaining(endtime){
+            const total = Date.parse(endtime) - Date.parse(new Date());
+            const seconds = Math.floor( (total/1000) % 60 );
+            const minutes = Math.floor( (total/1000/60) % 60 );
+            const hours = Math.floor( (total/(1000*60*60)) % 24 );
+            const days = Math.floor( total/(1000*60*60*24) );
+            return {
+              total,
+              days,
+              hours,
+              minutes,
+              seconds
+            };
+          }
+          const deadline = 'August 12 2023 13:00:00';
+          console.log(getTimeRemaining(deadline).hours+":"+ getTimeRemaining(deadline).minutes);
+    </script>
+</body>
+</html>
+

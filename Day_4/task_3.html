@@ -1,0 +1,34 @@
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+    </head>
+    <body>
+        <table>
+            <tr>
+                <td><Label>Enter Date</Label></td>
+                <td><input type="date" name="date" id="enter_date"></td>
+                <td><input type="button" value="Submit" onclick="getRemainingDays()"></td>
+            </tr>
+        </table>
+        <script>
+            function getRemainingDays(){
+               var userInput = document.getElementById('enter_date').value; 
+               var date_1 = new Date(userInput); 
+               var data = date_1.getTime(); 
+               console.log(data);
+
+               var date_2 = new Date(); 
+               var curruntDate  = date_2.getTime(); 
+               console.log(curruntDate);
+               var remaining = data - curruntDate   ; 
+               console.log(remaining);
+
+               var diffrence = Math.floor( remaining / (1000 * 3600 * 24));  
+               console.log(diffrence);
+            }
+        </script>
+    </body>
+    </html>

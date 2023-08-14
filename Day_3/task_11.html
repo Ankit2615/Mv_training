@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Task-11</title>
+</head>
+<body>
+    <input type="number" placeholder="Enter the first numer" id="num1">
+    <input type="number" placeholder="Enter the second numer" id="num2">
+    <p id="p"></p>
+    <button onclick="fun()">submit</button>
+    <script>
+        function fun(){
+            var no1=document.getElementById("num1").value;
+            var no2=document.getElementById("num2").value;
+            var sum=parseInt(no1, 10)+parseInt(no2, 10);
+            var d=""+sum;
+            var x=d.split("");
+            document.getElementById("p").innerHTML=x;
+            while(x.length!=1)
+            {
+                var product = 1; for(var i = 0; i < x.length; i++) { product *= parseInt(x[i], 10); }
+                product=""+product;
+                x=product.split("");
+            }
+            document.getElementById("p").innerHTML=x;
+        }
+    </script>
+</body>
+</html>

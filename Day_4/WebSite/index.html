@@ -1,0 +1,98 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css" integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N" crossorigin="anonymous">
+
+    <title>Register Page</title>
+  </head>
+  <body>
+    <div class="container">
+        <div class="jumbotron mt-3">
+            <h3>
+                Register Form
+            </h3>
+            <form >
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="fname">First Name</label>
+                    <input type="text" class="form-control" id="fname">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Last Name</label>
+                    <input type="text" class="form-control" id="lname">
+                  </div>
+                </div>
+                <div class="form-group">
+                  <label>Email</label>
+                  <input type="email" class="form-control" id="email" placeholder="Enter Email">
+                </div>
+                <div class="form-group">
+                  <label>Password</label>
+                  <input type="password" class="form-control" id="password" placeholder="Enter your password">
+                </div>
+                <div class="form-row">
+                  <div class="form-group col-md-12">
+                    <label for="inputCity">Confirm Password :- </label>
+                    <input type="password" class="form-control" id="cpass" placeholder="Enter your password">
+                  </div>
+                </div>
+                
+                <center>
+                    <a href="./Login.html">Alredy have account ?</a> &nbsp;
+                    <button type="button" class="btn btn-primary" onclick="checkValidation()">Sign in</button>
+                </center>
+              </form>
+              <script>
+                    function checkValidation(){
+                        var fname = document.getElementById('fname').value;
+                        var lname = document.getElementById('lname').value;
+                        var email = document.getElementById('email').value;
+                        var password = document.getElementById('password').value;
+                        var cpass = document.getElementById('cpass').value;
+                        console.log("data :- " + fname, lname, email, password, cpass);
+
+                        if(fname == "" || lname == "" || email == "" || password == "" || cpass == "")
+                        {
+                            alert("Fill all filed");  
+                        }else if(password == cpass)
+                        {
+                            if(password.length < 8 || cpass.length)
+                            {
+                              if(password.search(/[a-z]/) < 0 || cpass.search(/[a-z]/) < 0 )
+                              {
+                                alert("Password must contain atleast one lowecase latter");
+                              }
+                              else if(password.search(/[A-Z]/) < 0 || cpass.search(/[A-Z]/) < 0)
+                              {
+                                alert("Password must contain atleast one Uppercase latter");
+                              }
+                              else if(password.search(/[0-9]/) < 0 || cpass.search(/[0-9]/) < 0 )
+                              {
+                                alert("Password must containn one digit");
+                              }
+                              else
+                              {
+                                alert("Password is nice");
+                              }    
+                            }
+                        }
+                        else{
+                            alert("password &  confirm password not same");
+                        }
+                    }
+
+
+              </script>
+        </div>
+    </div>
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-Fy6S3B9q64WdZWQUiU+q4/2Lc9npb8tCaSX9FK7E8HnRr0Jz8D6OP9dO5Vg3Q9ct" crossorigin="anonymous"></script>
+  </body>
+</html>

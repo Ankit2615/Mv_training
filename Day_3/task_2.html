@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form>
+        <table>
+            <tr>
+                <td><label for="">Enter Number :- </label></td>
+                <td><input type="text" id="val_1"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center><button type="button" value="Submit" onclick="countLength()">Submit</button></center></td>
+            </tr>
+        </table>
+    </form>
+    <form >
+        <table>
+            <tr>
+                <td><label for="">Enter String :- </label></td>
+                <td><input type="text" id="val_2"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center><button type="button" value="Submit" onclick="checkString()">Submit</button></center></td>
+            </tr>
+        </table>
+    </form>
+
+    <form >
+        <table>
+            <tr>
+                <td><label for="">Enter String :- </label></td>
+                <td><input type="number" id="val_3"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center><button type="button" value="Submit" onclick="table()">Submit</center></td>
+            </tr>
+        </table>
+    </form>
+
+    <form >
+        <table>
+            <tr>
+                <td><label for="">Enter Two digit num :- </label></td>
+                <td><input type="text" id="val_4"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center><button type="button" value="Submit" onclick="swapNum()">Submit</center></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+
+        // task 2
+        function countLength(){
+            var geInput = document.getElementById("val_1").value;
+            console.log('Length of number :- ' + geInput.toString().length)
+        }
+        // task 3
+        function checkString(){
+            var getInput = document.getElementById("val_2").value
+            var substr = 'ee';
+            console.log(getInput.includes('ee')); 
+        }
+        // task 4
+        function table(){
+            var number = document.getElementById("val_3").value
+            for(let i=0; i <= 10;  i++){
+                const result = i * number;  
+                console.log(`${number} * ${i} = ${result} `); 
+            }
+        }
+        
+        // task 5
+        function swapNum(){
+            var num = document.getElementById("val_4").value
+            var num  = num.toString();
+            /*if(typeof num !== "number"){
+                console.log("plz enter int value"); 
+            }*/if(num.toString().length !== 2){
+                console.log("Number must be two digits only");  
+            }else{
+                //num = num.toString(); 
+                var swapNum = num.split('').reverse().join(''); 
+                if(num > swapNum ){
+                    console.log( num + ">(Grater)" + swapNum)
+                }else if(num == swapNum ){
+                    console.log("Numbers are qual"); 
+                }else{
+                    console.log(num + "<(less than)" + swapNum); 
+                } 
+            }
+        }
+        
+
+        // task 6
+        function rightShift(x,y){
+            let value = Math.floor(x / Math.pow(2, y));
+            console.log(value); 
+        }
+        rightShift(50,3);
+
+        // Task 7
+        function removeZero(num_1){
+            let num = parseFloat(num_1); 
+            num === Math.floor(num) ? Math.floor(num).toString : num.toString();
+            console.log(num) 
+        }
+        removeZero('000464.0000');
+
+        // task 8
+        var vowel = ['a','e','i','o','u'];
+        function checkVowal(str){
+            var count = 0; 
+            
+            for(var letter of str.toLowerCase()){
+                if(vowel.includes(letter)){
+                    count++;
+                }
+            }
+            return count;  
+        }
+        const userinput = prompt("Enter a string"); 
+        const output = checkVowal(userinput); 
+        console.log('a '+output)
+        
+        
+
+    </script>
+</body>
+</html>

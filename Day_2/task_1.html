@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>Document</title>
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+	<style>
+		.sidebar {
+			height: 100%;
+			width: 200x;
+			position: fixed;
+			top: 0;
+			left: 0;
+			padding-top: 40px;
+			background-color: lightblue;
+			}
+			
+			.sidebar div {
+			padding: 12px;
+			font-size: 24px;
+			display: block;
+			}
+			
+			.body-text {
+			margin-left: 225px;
+			font-size:15px;
+			}
+			.sidebar div a{
+				text-decoration: none;
+			}
+			.bg{
+				background-color: black;
+			}
+	</style>
+</head>
+
+<body>
+	<div class="sidebar">
+		<div>
+			<img src="/Day_2/img/logo.png" alt="" srcset="">
+		</div>
+		<div><a href="#content1">Vilages New</a></div>
+		<div><a href="#content1">Bollywood News</a></div>
+		<div><a href="#content1">National News</a></div>
+		</div>
+		
+		<div class="body-text bg">
+		<!-- body content -->
+		<nav class="navbar fixed navbar-expand-lg navbar-darks bg-dark">
+			<div class="container">
+			  <a class="navbar-brand" href="#">TV 9 News</a>
+			  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			  </button>
+			  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+				  
+				</ul>
+				<form class="d-flex">
+				  <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+				  <button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			  </div>
+			</div>
+		  </nav>
+
+		  <div class="row mt-1">
+			<div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="true">
+				<div class="carousel-indicators">
+				  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+				  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+				  <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+				</div>
+				<div class="carousel-inner">
+				  <div class="carousel-item active">
+					<img src="/Day_2/img/new_.jpg" class="d-block w-100 h-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="/Day_2/img/new_.jpg" class="d-block w-100" alt="...">
+				  </div>
+				  <div class="carousel-item">
+					<img src="/Day_2/img/new_.jpg" class="d-block w-100" alt="...">
+				  </div>
+				</div>
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+				  <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Previous</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+				  <span class="carousel-control-next-icon" aria-hidden="true"></span>
+				  <span class="visually-hidden">Next</span>
+				</button>
+			  </div>
+		  </div>
+		  <marquee behavior="" direction=""  class="mt-2" style="background-color: aquamarine;">
+			<div class="row" >
+				<h3>News Updates</h3>
+			</div>
+		  </marquee>
+		  <div class="row ps-5">
+			<div class="col-4">
+				<div class="card" style="width: 19rem;">
+					<img src="/Day_2/img/download.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">News 1</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 19rem;">
+					<img src="/Day_2/img/news.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">News 2</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+
+			<div class="col-4">
+				<div class="card" style="width: 19rem;">
+					<img src="/Day_2/img/news.jpg" class="card-img-top" alt="...">
+					<div class="card-body">
+						<h5 class="card-title">Card title</h5>
+						<p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+						<a href="#" class="btn btn-primary">Go somewhere</a>
+					</div>
+				</div>
+			</div>
+			
+		  </div>
+		  
+		</div>
+		
+		</body>
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form action="">
+        <table>
+            <tr>
+                <td><label for="">Enter Your First Value :- </label></td>
+                <td><input type="text" id="val_1"></td>
+            </tr>
+            <tr>
+                <td><label for="">Enter Your secod value :- </label></td>
+                <td><input type="text" id="val_2"></td>
+            </tr>
+            <tr>
+                <td colspan="2"><center><input type="submit" value="Submit" onclick="contactinatio()"></center></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function contactinatio(){
+            var val_1 = document.getElementById('val_1').value;
+            var val_2 = document.getElementById('val_2').value; 
+
+            document.write(val_1.concat(" " + val_2)); 
+        }
+    </script>
+</body>
+</html>

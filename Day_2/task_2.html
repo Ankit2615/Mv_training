@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <style>
+        .div_1{
+            width: 100px;
+            height: 100px;
+            background: red;
+            position: relative;
+            animation: myAnimation 2s 0s infinite;
+        }
+        @keyframes myAnimation {
+            0% {top: 0px; left: 0px; background: red;}
+            25%{top: 0px; left:100px; background: blue;}
+            50%{top: 100px; left: 100px; background: yellow;}
+            75%{top: 100px; left: 0px; background: green;}
+            100%{top: 0px; left: 0px; background: red;} 
+        }
+        .div_2{
+            width: 100px;
+            height: 100px;
+            background: blue;
+            position: relative;
+            animation: mymove 2s 0s infinite;
+        }
+        
+        @keyframes mymove {
+            from {top: 0px;}
+            to {top: 200px;}
+        }
+
+        .div_3{
+            width: 100px;
+            height: 100px;
+            position: relative;
+            background: gray;
+            animation: myAnimagtio3 5s infinite;
+        }
+        @keyframes myAnimagtio3 {
+            0%{top: 0px}
+            25%{top: 200px}
+            75%{top:50px}
+            100%{
+                top:100px
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="row">
+        <div class="col-4">
+            <div class="div_1"></div>
+        </div>
+       
+        <div class="col-4">
+            <div class="div_2"></div>
+        </div>
+
+        <div class="col-4">
+            <div class="div_3"></div>
+        </div>
+    </div>
+
+    
+</body>
+</html>

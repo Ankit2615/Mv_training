@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <body>
+        <form >
+            <table>
+                <tr>
+                    <td><Label>Enter String</Label></td>
+                    <td><input type="text" name="val_1" id="val_1"></td>
+                    <td><button type="button" value="Submit" onclick="FindOddEven()">Submit</button></td>
+                </tr>
+            </table>
+        </form>
+        <script>
+            function FindOddEven(){
+                var num = document.getElementById('val_1').value; 
+                var emtyString = "";
+                for(var i = 0; i < num.length; i++){
+                    if(num.charCodeAt(i) % 2 == 0){
+                        // in empty string i save my updated string of character when loop in iterate character one by one 
+                        // for example i = 1 it take charcter 'A' then if condition check these ASCII value is odd or even then it will convert into lower n upercse 
+                        // in this code i aslo add my string character in to in to the empty string  that's help to to hold itrated value 
+                        emtyString = emtyString + num.charAt(i).toLowerCase();
+                    }else{
+                        emtyString = emtyString + num.charAt(i).toUpperCase();
+                    }
+                }
+                console.log(emtyString)
+            }
+        </script>
+    </body>
+</body>
+</html>

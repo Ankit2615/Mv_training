@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form  method="post">
+        <label for="">Password</label>
+        <input type="password" placeholder="enter your password" id="password">
+
+        <input type="button" value="submit" onclick="checkPass()">
+    </form>
+    <script>
+       function checkPass(){
+            console.log('in checkPass')
+            let pass = document.getElementById('password').value; 
+            let lowerCaseLetters = /[a-z]/g;
+            if( pass == ''  ){ 
+                alert("password not empty "); 
+            }
+            else if(pass.length < 8){
+                alert('password is must contain 8 character');  
+            } else if(pass.search(/[a-z]/) < 0 ){
+                alert("Password must contain atleast one lowecase latter"); 
+            }else if(pass.search(/[A-Z]/) < 0 ){
+                alert("Password must contain atleast one uppeercase latter"); 
+            }else if(pass.search(/[0-9]/) < 0 ){
+                alert("Password must contain atleast one didgits "); 
+            }else{
+                alert("password is good")
+            }
+        }
+
+        {
+            if(password == '') { 
+
+                alert("Error: Password must be at least 8 characters"); 
+        
+                } else if(password.search(/[a-z]/) < 0) { 
+        
+                alert("Error: Password must contain at least one lowercase letter"); 
+        
+                } else if(password.search(/[A-Z]/) < 0) { 
+        
+                alert("Error: Password must contain at least one uppercase letter"); 
+        
+                } else if(password.search(/[0-9]/) < 0) { 
+        
+                alert("Error: Password must contain at least one number"); 
+        
+                } else { 
+        
+                alert("Success!"); 
+        
+            } 
+        }
+
+        
+    </script>
+</body>
+</html>

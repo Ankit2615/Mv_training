@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <style>
+        #radius {
+            width: 28px;
+            height: 28px;
+            background: blue;
+            border-radius: 50% 50% 50% 0;
+            color: white;
+            margin-top: 10px;
+            text-align: center;
+        }
+        .jumbotron{
+            width: 50%;
+            height: 50%;
+        }
+        input[type="text"],[type="email"], textarea ,#intrest  {
+
+            background-color : #d1d1d1; 
+          
+          }
+    </style>
+</head>
+
+<body>
+    <div class="container mt-5">
+        <div class="jumbotron">
+            <div class="container">
+                <form>
+                    <div class="form-group">
+                        <label id="radius">1</label>
+                        <label >Candidate Info</label>
+                        <input type="text" class="form-control" id="name" placeholder="Your Name*" >
+                    </div>
+                    <div class="form-group">
+                        <input type="email" id="email" pattern="/^[a-zA-Z0-9.!#$%'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/" class="form-control" id="exampleInputPassword1" placeholder="Your Email*">
+                    </div>
+                    <div class="form-group">
+                        <textarea style="background-color: #d1d1d1;" class="form-control" id="about" rows="1" placeholder="About Yourself"></textarea>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="exampleFormControlSelect1">Interests:</label>
+                        <select class="form-control" id="intrest">
+                          <option>Frontend</option>
+                          <option>Backend</option>
+                          <option>Full Stack</option>
+                          <option>Salesforce</option>
+                          <option>QA</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label id="radius">2</label>
+                        <label >Additional Info</label>
+                        <textarea style="background-color: #d1d1d1;" class="form-control" id="exampleFormControlTextarea1" rows="1" placeholder="About Your School"></textarea>
+                    </div>
+                    <button type="submit" class="btn btn-primary btn-lg btn-block">Submit</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+    function getSpace(value){
+        var newInput = value.split(""); 
+        console.log(newInput);
+        var emptyString ="";
+        for(var i = 0; i <= value.length; i++){
+            if(newInput[i] == i){
+                emptyString = value[i];  
+            }else{
+                emptyString = newInput.splice(i , 0," "); 
+            }
+        }
+        console.log(newInput.join(''));   
+    }
+
+    getSpace("1235689"); 
+   </script>
+</body>
+</html>

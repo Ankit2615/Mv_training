@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td><label for="">Enter String :- </label></td>
+                <td><input type="text" id="val_2"></td>
+            </tr>
+            
+            <tr>
+                <td colspan="2"><center><button type="button" value="Submit" onclick="changepos()">Submit</center></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function changepos(){
+            var value = document.getElementById('val_2').value; 
+            var capitalIndex = 0; 
+            const newstrArray = [];
+            for(var i =0; i < value.length;  i++){
+                if(value[i] !== value[i].toLowerCase()){
+                    newstrArray.splice(capitalIndex, 0, value[i])
+                    capitalIndex++; 
+                }else{
+                    newstrArray.push(value[i]); 
+                }
+            }
+            console.log(newstrArray.join(''));
+        }
+    </script>
+</body>
+</html>

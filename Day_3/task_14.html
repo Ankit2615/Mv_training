@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <form >
+        <table>
+            <tr>
+                <td><Label>Enter Int Value</Label></td>
+                <td><input type="text" name="val_1" id="val_1"></td>
+                <td><button type="button" value="Submit" onclick="findSmallLarge()">Submit</button></td>
+            </tr>
+        </table>
+    </form>
+    <script>
+        function findSmallLarge(){
+            var num = document.getElementById('val_1').value; 
+            var strArr = num.split(' ');
+            var creds = strArr.reduce((acc,val) =>{
+                let { greatest,smallest } = acc;
+                greatest = Math.max(val, greatest);
+                smallest = Math.min(val, smallest);
+                return {greatest , smallest};
+            },{
+                greatest: -Infinity,
+                smallest:Infinity
+            });
+            console.log(`${creds.greatest} ${creds.smallest}`);
+        }
+    </script>
+</body>
+</html>
