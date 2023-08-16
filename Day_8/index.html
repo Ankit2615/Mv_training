@@ -1,0 +1,86 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<style>
+    .draggable {
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        cursor: move;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .fixed {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border-radius: 50%;
+        width: 350px;
+        height: 350px;
+        background-color: skyblue;
+    }
+</style>
+<script>
+//the div function from the allowdrop
+var pixel = 340;  
+function allowDrop(ev) { 
+    ev.preventDefault(); 
+} 
+function drag(ev) { 
+    ev.dataTransfer.setData("text", ev.target.id); 
+}
+var id = 1; 
+// whre we want to drop the div
+function drop(ev) {
+    ev.preventDefault(); 
+    var data = ev.dataTransfer.getData("text"); 
+    var drop = document.getElementById(data); 
+    // Set Hight n width.. 
+    drop.style.height = pixel + 'px'; 
+    drop.style.width = pixel + 'px'; 
+     
+    // everytime decrease the 10px
+    pixel -= 20; 
+    ev.target.appendChild(document.getElementById(data));
+    // check if the pixels are less than 0 or not
+    if(pixel == 0){
+        alert("stop ! u achive the max length .. "); 
+    }else{
+        ev.target.removeAttribute("ondrop"); 
+        ev.target.removeAttribute("ondragover"); 
+        drop.setAttribute("ondrop", "drop(event)"); 
+        drop.setAttribute("ondragover", "allowDrop(event)");
+    }
+
+    // Create div  inside the div
+    var div =document.createElement("div"); 
+    //let id = 1; 
+    id++; 
+    div.id = "div" + id; 
+    div.className += "draggable"; 
+    div.setAttribute("Draggable", "true");
+    div.setAttribute("ondragstart", "drag(event)"); 
+    // for the background color via call functio
+    div.style.backgroundColor = "#" + setcolor();
+    // Close the created div
+    document.body.appendChild(div); 
+    // genrate the color  
+    function setcolor(){
+        return Math.floor(Math.random()*16777215).toString(16);
+    } 
+}
+
+</script>
+</head>
+<body>
+
+<p>Drag the W3Schools image into the rectangle:</p>
+
+<div id="div1" class="fixed" ondrop="drop(event)" ondragover="allowDrop(event)"></div> <br>
+<div id="drag1" class="draggable" draggable="true" style="background-color:aqua;" ondragstart="drag(event)"></div>
+
+</body>
+</html>
+
